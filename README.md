@@ -13,20 +13,20 @@ Install Guide
 1. Установливаем cron в vCDA Manager.
   - cd /etc/yum.repos.d/.
   - vi photon-release.repo
-  1.3 Изменяем 0 на 1 enabled=1, сохраняем файл
-  1.4 Устанавливаем cronie - tdnf install cronie
-  1.5 systemctl start crond
-  1.6 systemctl enable crond
-  1.7 vi photon-release.repo
-  1.8 Изменяем 1 на 0 enabled=0, сохраняем файл
+  - Изменяем 0 на 1 enabled=1, сохраняем файл
+  - Устанавливаем cronie - tdnf install cronie
+  - systemctl start crond
+  - systemctl enable crond
+  - vi photon-release.repo
+  - Изменяем 1 на 0 enabled=0, сохраняем файл
 
 
 2. Размещаем скрипт для бекапа.
 
-  2.1 Создаем папку для хранения скрипта - mkdir /home/scripts
-  2.2 Копируем туда файлы cloud_backup_vcda.sh и vcda_auth.cfg
-  2.3 В файле vcda_auth.cfg изменяем значения для подключения к vCDA
-  2.4 cd /home/scripts
-  2.5 chmod u+x cloud_backup_vcda.sh
-  2.6 chmod 750 vcda_auth.cfg
-  2.7 Копируем файл vcda-backup в папку /etc/cron.d
+  - Создаем папку для хранения скрипта - mkdir /home/scripts
+  - Копируем туда файлы cloud_backup_vcda.sh и vcda_auth.cfg
+  - В файле vcda_auth.cfg изменяем значения для подключения к vCDA
+  - cd /home/scripts
+  - chmod u+x cloud_backup_vcda.sh
+  - chmod 750 vcda_auth.cfg
+  - Копируем файл vcda-backup в папку /etc/cron.d
