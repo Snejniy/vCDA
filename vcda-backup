@@ -1,0 +1,5 @@
+# Run the jobs
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+0 */24 * * * root /home/scripts/cloud_backup_vcda.sh
