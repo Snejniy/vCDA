@@ -12,8 +12,11 @@ Install Guide
 Установливаем cron в vCDA Manager.
 
 cd /etc/yum.repos.d/
+
 vi photon-release.repo
+
 меняем 0 на 1 enabled=1, сохраняем файл
+
 устанавливаем cronie - tdnf install cronie
 systemctl start crond
 systemctl enable crond
