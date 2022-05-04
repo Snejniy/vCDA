@@ -8,6 +8,7 @@ echo "Starting Authenticationon on VCDA" \
 
 source /home/scripts/vcda_auth.cfg
 vcdaname=$(eval echo ${VCDA_NAME})
+vcdauser=$(eval echo ${VCDA_USER})
 vcdapass=$(eval echo ${VCDA_PASSWORD} | base64 --decode)
 
 Auth=$(curl -k "https://$vcdaname:8046/sessions" -i -X POST \
@@ -15,7 +16,7 @@ Auth=$(curl -k "https://$vcdaname:8046/sessions" -i -X POST \
     -H 'Accept: application/vnd.vmware.h4-v4.3+json;charset=UTF-8' \
     -d '{
   "type" : "localUser",
-  "localUser" : "root",
+  "localUser" : "'"$vcdauser"'",
   "localPassword" : "'"$vcdapass"'"
 }' | grep X-VCAV-Auth | cut -d " " -f2)
 
